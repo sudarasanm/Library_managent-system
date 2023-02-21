@@ -1,0 +1,65 @@
+[
+    {
+        "name": "On the road",
+        "invoice": 123124124,
+        "author": "jack Kerouac",
+        "isbn": 894781972453895,
+        "cost": 350,
+        "department" : "Information Technology",
+        "stock":6
+    },
+    {
+        "name": "The Sorrows of Youngs Werther",
+        "invoice": 12312234124,
+        "author": "jack ",
+        "isbn": 894781972452343895,
+        "cost": 350,
+        "department" : "Science",
+        "stock":10
+    },
+    {
+        "name": " the road",
+        "invoice": 12312344124,
+        "author": "Kerouac",
+        "isbn": 894781972453242895,
+        "cost": 350,
+        "department" : "Drama",
+        "stock":8
+    },
+    {
+        "name": "road",
+        "invoice": 12312412324,
+        "author": "Johann",
+        "isbn": 89478197232453895,
+        "cost": 350,
+        "department" : "Maths",
+        "stock":9
+    },
+    {
+        "name": "Swann Way",
+        "invoice": 1231243124,
+        "author": "Marcel Proust",
+        "isbn": 8947819724532323895,
+        "cost": 350,
+        "department" : "Information Technology",
+        "stock":3
+    },
+    {
+        "name": "The Long ",
+        "invoice": 123127674124,
+        "author": "Laura",
+        "isbn": 894781972453895,
+        "cost": 350,
+        "department" : "Science",
+        "stock":6
+    },
+    {
+        "name": "By the Shores",
+        "invoice": 12312467124,
+        "author": "Ingalls",
+        "isbn": 894781972234453895,
+        "cost": 350,
+        "department" : "Computer Science",
+        "stock":2
+    }
+]

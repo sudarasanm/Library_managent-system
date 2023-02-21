@@ -1,0 +1,44 @@
+[
+    {
+        "name": "sudarasan",
+        "register": "19IT044",
+        "department":"Information Technology",
+        "year":"4 year"
+
+    },
+    {
+        "name": "saran",
+        "register": "19IT039",
+        "department":"Information Technology",
+        "year":"3 year"
+
+    },
+    {
+        "name": "Mahi",
+        "register": "19IT043",
+        "department":"Information Technology",
+        "year":"2 year"
+
+    },
+    {
+        "name": "Susan",
+        "register": "19IT045",
+        "department":"ECE",
+        "year":"2 year"
+
+    },
+    {
+        "name": "Magesh",
+        "register": "19IT004",
+        "department":"EEE",
+        "year":"3 year"
+
+    },
+    {
+        "name": "Vishal",
+        "register": "19IT034",
+        "department":"Mech",
+        "year":"1 year"
+
+    }
+]
