@@ -1,8 +1,14 @@
 [
     {
         "register":"19it044",
-        "name":"sudarasan",
-        "isbn":"24324524515",
+        "name":"On the road",
+        "bookid":"0",
         "role":"Student"
+    },
+    {
+        "register":"1234IT",
+        "name":"The Sorrows of Youngs Werther",
+        "bookid":"1",
+        "role":"Faculty"
     }
 ]

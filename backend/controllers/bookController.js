@@ -127,20 +127,22 @@ exports.deleteBook = async (req, res, next) =>{
 // }
 
 exports.borrowBook = catchError(async (req,res,next)=>{
-  const borrow = await Borrow.create (req.body)
+  const {register , name, bookid ,role}= (req.body)
 
-  if(!borrow.register || !borrow.name || !borrow.bookid || !borrow.role){
+  if(!register || !name || !bookid || !role){
     return next(new ErrorHandler ('Enter the requide fields'))
   }
 
-  const lbookid =  await Book.findOne({bookid:borrow.bookid})
-  console.log(lbookid);
+  const lbookid =  await Book.findOne({bookid:bookid})
+  // console.log(lbookid);
   if(!lbookid){
     return next(new ErrorHandler("Invalid bookid"))
   }
+  const borrow = await Borrow.create(req.body)
   res.status(201).json({
     success:true,
     borrow
+    
   })
 
 })  
