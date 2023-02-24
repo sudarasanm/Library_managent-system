@@ -7,9 +7,9 @@ const facultySchema = new mongoose.Schema({
             trim: true,
             maxLength:100
         },
-        employee :{
+        register :{
             type : String,
-            required: [true, "Enter the employee Number" ],
+            required: [true, "Enter the Register Number" ],
             trim: true,
             maxLength:100  
         },

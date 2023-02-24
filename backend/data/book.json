@@ -6,7 +6,7 @@
         "isbn": 894781972453895,
         "cost": 350,
         "department" : "Information Technology",
-        "stock":6
+        "bookid":0
     },
     {
         "name": "The Sorrows of Youngs Werther",
@@ -15,7 +15,7 @@
         "isbn": 894781972452343895,
         "cost": 350,
         "department" : "Science",
-        "stock":10
+        "bookid":1
     },
     {
         "name": " the road",
@@ -24,7 +24,7 @@
         "isbn": 894781972453242895,
         "cost": 350,
         "department" : "Drama",
-        "stock":8
+        "bookid":12
     },
     {
         "name": "road",
@@ -33,7 +33,7 @@
         "isbn": 89478197232453895,
         "cost": 350,
         "department" : "Maths",
-        "stock":9
+        "bookid":123
     },
     {
         "name": "Swann Way",
@@ -42,7 +42,7 @@
         "isbn": 8947819724532323895,
         "cost": 350,
         "department" : "Information Technology",
-        "stock":3
+        "bookid":1234
     },
     {
         "name": "The Long ",
@@ -51,7 +51,7 @@
         "isbn": 894781972453895,
         "cost": 350,
         "department" : "Science",
-        "stock":6
+        "bookid":12345
     },
     {
         "name": "By the Shores",
@@ -60,6 +60,6 @@
         "isbn": 894781972234453895,
         "cost": 350,
         "department" : "Computer Science",
-        "stock":2
+        "bookid":123456
     }
-]
+]   

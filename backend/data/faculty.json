@@ -1,37 +1,37 @@
 [
     {
         "name": "Raghul",
-        "employee": "24124IT",
+        "register": "24124IT",
         "department":"Information Technology"
 
     },
     {
         "name": "Kaniga",
-        "employee": "1234IT",
+        "register": "1234IT",
         "department":"Information Technology"
 
     },
     {
         "name": "Kamali",
-        "employee": "12415IT",
+        "register": "12415IT",
         "department":"Information Technology"
 
     },
     {
         "name": "Anbu",
-        "employee": "1234ECE",
+        "register": "1234ECE",
         "department":"ECE"
 
     },
     {
         "name": "Janai",
-        "employee": "564242EEE",
+        "register": "564242EEE",
         "department":"EEE"
 
     },
     {
         "name": "Pushpa",
-        "employee": "53223ME",
+        "register": "53223ME",
         "department":"Mech"
 
     }

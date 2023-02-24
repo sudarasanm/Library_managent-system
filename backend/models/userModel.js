@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
         },
         password :{
             type : String,
-            required: [true, "Enter the employee Number" ],
+            required: [true, "Enter the Passsword" ],
             trim: true,
             maxLength:20,
             select: false

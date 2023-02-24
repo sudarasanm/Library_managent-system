@@ -1,3 +1,4 @@
+const { compare } = require("bcrypt");
 const mongoose = require("mongoose");
 
 const bookSchema = new mongoose.Schema({
@@ -47,15 +48,18 @@ const bookSchema = new mongoose.Schema({
                 message: "Select the correct category"
             } 
         },
-        stock :{
+        bookid :{
             type : Number,
-            required: [true, "Enter the Stock value" ],
+            required: [true, "Enter the Book ID" ],
             trim: true
         }
 
 
 })
 
+bookSchema.method.isValidIsbn = async function(enterdisbn){
+    return await compare(enterdisbn,this.isbn)
+}
 let schema = mongoose.model("Book",bookSchema)
 
 module.exports = schema
