@@ -29,6 +29,19 @@ const facultySchema = new mongoose.Schema({
                 message: "Select the correct Department"
             } 
         },
+        Gender :{
+            type : String,
+            required: [true, "Enter the Register Number" ],
+            trim: true,
+            enum:{
+                values: [
+                    'Male',
+                    'Female',
+                    'Other'
+                ],
+                message: "Select the correct Gender"
+            } 
+        }
         
 })
 

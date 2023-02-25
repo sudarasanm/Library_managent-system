@@ -13,6 +13,19 @@ const studentSchema = new mongoose.Schema({
             trim: true,
             maxLength:100  
         },
+        Gender :{
+            type : String,
+            required: [true, "Enter the Register Number" ],
+            trim: true,
+            enum:{
+                values: [
+                    'Male',
+                    'Female',
+                    'Other'
+                ],
+                message: "Select the correct Gender"
+            } 
+        },
         department :{
             type : String,
             required: [true, "Enter Your  Department" ],

@@ -172,6 +172,11 @@ exports.returnBook = catchError(async (req,res,next)=>{
 
 })  
 
-exports.reportBook = catchError(async(req,res,next)=>{
-    
-})
+exports.getreport = catchError(async(req,res,next)=>{ 
+  const report = await Report.find();
+  res.status(200).json({
+    success:true,
+    Transaction: report.length,
+    report
+  })
+}) 
