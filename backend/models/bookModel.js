@@ -57,9 +57,9 @@ const bookSchema = new mongoose.Schema({
 
 })
 
-bookSchema.method.isValidIsbn = async function(enterdisbn){
-    return await compare(enterdisbn,this.isbn)
-}
+// bookSchema.method.isValidIsbn = async function(enterdisbn){
+//     return await compare(enterdisbn,this.isbn)
+// }
 let schema = mongoose.model("Book",bookSchema)
 
 module.exports = schema

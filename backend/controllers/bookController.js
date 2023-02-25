@@ -2,6 +2,8 @@ const Book = require('../models/bookModel')
 const Faculty = require('../models/facultyModel')
 const Student = require('../models/studentModel')
 const Borrow = require('../models/borrowModel')
+const Return = require('../models/returnModel')
+const Report = require('../models/reportModule')
 const ErrorHandler = require("../utils/errorHandler")
 const catchError = require("../middlewares/catchAsyncError") 
 const { db } = require('../models/bookModel')
@@ -139,10 +141,37 @@ exports.borrowBook = catchError(async (req,res,next)=>{
     return next(new ErrorHandler("Invalid bookid"))
   }
   const borrow = await Borrow.create(req.body)
+  const reportBook = await Report.create(req.body)
   res.status(201).json({
     success:true,
-    borrow
-    
+    borrow,
+    reportBook
+  })
+})  
+
+
+exports.returnBook = catchError(async (req,res,next)=>{
+  const {register , name, bookid ,role}= (req.body)
+
+  if(!register || !name || !bookid || !role){
+    return next(new ErrorHandler ('Enter the requide fields'))
+  }
+
+  const lbookid =  await Borrow.findOne({bookid:bookid})
+  // console.log(lbookid);
+  if(!lbookid){
+    return next(new ErrorHandler("The Book is not Borrow or Invalid bookid"))
+  }
+  const returnBook = await Return.create(req.body) 
+  const reportBook = await Report.create(req.body)
+  res.status(201).json({
+    success:true,
+    returnBook,
+    reportBook
   })
 
 })  
+
+exports.reportBook = catchError(async(req,res,next)=>{
+    
+})
