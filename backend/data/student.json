@@ -10,6 +10,7 @@
     {
         "name": "saran",
         "register": "19IT039",
+        "gender":"Male",
         "department":"Information Technology",
         "year":"3 year"
 
@@ -17,6 +18,7 @@
     {
         "name": "Mahi",
         "register": "19IT043",
+        "gender":"Female",
         "department":"Information Technology",
         "year":"2 year"
 
@@ -24,6 +26,7 @@
     {
         "name": "Susan",
         "register": "19IT045",
+        "gender":"Male",
         "department":"ECE",
         "year":"2 year"
 
@@ -31,6 +34,7 @@
     {
         "name": "Magesh",
         "register": "19IT004",
+        "gender":"Male",
         "department":"EEE",
         "year":"3 year"
 
@@ -38,6 +42,7 @@
     {
         "name": "Vishal",
         "register": "19IT034",
+        "gender":"Male",
         "department":"Mech",
         "year":"1 year"
 

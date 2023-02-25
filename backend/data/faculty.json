@@ -2,37 +2,43 @@
     {
         "name": "Raghul",
         "register": "24124IT",
-        "department":"Information Technology"
+        "department":"Information Technology",
+        "gender":"Male"
 
     },
     {
         "name": "Kaniga",
         "register": "1234IT",
-        "department":"Information Technology"
+        "department":"Information Technology",
+        "gender":"Female"
 
     },
     {
         "name": "Kamali",
         "register": "12415IT",
-        "department":"Information Technology"
+        "department":"Information Technology",
+        "gender":"female"
 
     },
     {
         "name": "Anbu",
         "register": "1234ECE",
-        "department":"ECE"
+        "department":"ECE",
+        "gender":"Male"
 
     },
     {
         "name": "Janai",
         "register": "564242EEE",
-        "department":"EEE"
+        "department":"EEE",
+        "gender":"Female"
 
     },
     {
         "name": "Pushpa",
         "register": "53223ME",
-        "department":"Mech"
+        "department":"Mech",
+        "gender":"female"
 
     }
 ]
