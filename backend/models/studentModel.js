@@ -13,7 +13,7 @@ const studentSchema = new mongoose.Schema({
             trim: true,
             maxLength:100  
         },
-        Gender :{
+        gender :{
             type : String,
             required: [true, "Enter the Register Number" ],
             trim: true,

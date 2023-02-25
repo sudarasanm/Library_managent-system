@@ -29,7 +29,7 @@ const facultySchema = new mongoose.Schema({
                 message: "Select the correct Department"
             } 
         },
-        Gender :{
+        gender :{
             type : String,
             required: [true, "Enter the Register Number" ],
             trim: true,
