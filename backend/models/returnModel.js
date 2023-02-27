@@ -29,13 +29,13 @@ const returnSchema = new mongoose.Schema({
         } 
 
     },
-    purchaseDate :{
+    returnDate :{
         type : Date,
         default: Date.now
     },
     active :{
-        type : Boolean,
-        default: true
+        type : String,
+        default: "Return"
     }
 })
 

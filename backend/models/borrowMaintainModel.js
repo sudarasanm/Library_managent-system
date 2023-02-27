@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-const borrowSchema = new mongoose.Schema({
+const borrowMaintainSchema = new mongoose.Schema({
     register :{
         type : String,
         required: true,
@@ -38,6 +38,6 @@ const borrowSchema = new mongoose.Schema({
     }
 })
 
-let schema = mongoose.model("Borrow",borrowSchema)
+let schema = mongoose.model("BorrowMaintain",borrowMaintainSchema)
 
 module.exports = schema

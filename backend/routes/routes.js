@@ -1,11 +1,12 @@
 const express = require("express");
 const { getFacultys, newFaculty, updateFaculty, deleteFaculty } = require("../controllers/facultyController");
-const { getBooks, newBook, updateBook, deleteBook, borrowBook, returnBook, reportBook, getreport } = require("../controllers/bookController");
+const { getBooks, newBook, updateBook, deleteBook, borrowBook, returnBook,  getreport, getMaintainborrowbook } = require("../controllers/bookController");
 const { getStudents, newStudent, updateStudent, deleteStudent } = require("../controllers/studentController");
 const { registerUser, loginUser } = require("../controllers/authController")
 const router = express.Router();
 
 router.route("/borrows").post(borrowBook);
+router.route("/maintainborrows").get(getMaintainborrowbook)
 router.route("/returns").post(returnBook);
 router.route("/reports").get(getreport)
 

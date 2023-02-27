@@ -9,7 +9,7 @@ const reportSchema = new mongoose.Schema({
     },
     name :{
         type : String,
-        required: [true, "Enter the Book Name" ],
+        required: true,
         trim: true,
         maxLength:100
     },
@@ -29,13 +29,15 @@ const reportSchema = new mongoose.Schema({
         } 
 
     },
+    returnDate :{
+        type : String, 
+    },
     purchaseDate :{
-        type : Date,
-        default: Date.now
+        type : String,
     },
     active :{
-        type : Boolean,
-        default: true
+        type : String,
+        
     }
 })
 
