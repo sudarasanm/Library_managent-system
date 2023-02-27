@@ -95,18 +95,20 @@ exports.returnBook = catchError(async (req,res,next)=>{
   }
 
   const rbookid =  await Borrow.findOne({bookid:bookid})
-  // console.log(lbookid);
+  
   if(!rbookid){
     return next(new ErrorHandler("The Book is not Borrow or Invalid bookid"))
   }
   const returnBook = await Return.create(req.body) 
-
+  
   if(rbookid){
     const deletedBooks = await BorrowMaintain.deleteOne({rbookid})
   }
+
   res.status(201).json({
     success:true,
     returnBook
+    
   })
 
 })  
@@ -114,7 +116,7 @@ exports.returnBook = catchError(async (req,res,next)=>{
 exports.getreport = catchError(async(req,res,next)=>{ 
   const breport = await Borrow.find();
   const rreport = await Return.find();
-
+  
   res.status(200).json({
     success:true,
     Borrow_Transaction: breport.length,
