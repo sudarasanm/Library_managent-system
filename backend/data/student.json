@@ -4,7 +4,8 @@
         "register": "19IT044",
         "gender":"Male",
         "department":"Information Technology",
-        "year":"4 year"
+        "year":"4 year",
+        "phoneno":1234567890
 
     },
     {
@@ -12,7 +13,9 @@
         "register": "19IT039",
         "gender":"Male",
         "department":"Information Technology",
-        "year":"3 year"
+        "year":"3 year",
+        "phoneno":1234567890
+
 
     },
     {
@@ -20,7 +23,8 @@
         "register": "19IT043",
         "gender":"Female",
         "department":"Information Technology",
-        "year":"2 year"
+        "year":"2 year",
+        "phoneno":1234567890
 
     },
     {
@@ -28,7 +32,8 @@
         "register": "19IT045",
         "gender":"Male",
         "department":"ECE",
-        "year":"2 year"
+        "year":"2 year",
+        "phoneno":1234567890
 
     },
     {
@@ -36,7 +41,8 @@
         "register": "19IT004",
         "gender":"Male",
         "department":"EEE",
-        "year":"3 year"
+        "year":"3 year",
+        "phoneno":1234567890
 
     },
     {
@@ -44,7 +50,8 @@
         "register": "19IT034",
         "gender":"Male",
         "department":"Mech",
-        "year":"1 year"
+        "year":"1 year",
+        "phoneno":1234567890
 
     }
 ]

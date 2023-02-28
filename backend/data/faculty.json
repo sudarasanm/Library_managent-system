@@ -3,42 +3,54 @@
         "name": "Raghul",
         "register": "24124IT",
         "department":"Information Technology",
-        "gender":"Male"
+        "gender":"Male",
+        "phoneno":1234567890
+
 
     },
     {
         "name": "Kaniga",
         "register": "1234IT",
         "department":"Information Technology",
-        "gender":"Female"
+        "gender":"Female",
+        "phoneno":1234567890
+
 
     },
     {
         "name": "Kamali",
         "register": "12415IT",
         "department":"Information Technology",
-        "gender":"female"
+        "gender":"female",
+        "phoneno":1234567890
+
 
     },
     {
         "name": "Anbu",
         "register": "1234ECE",
         "department":"ECE",
-        "gender":"Male"
+        "gender":"Male",
+        "phoneno":1234567890
+
 
     },
     {
         "name": "Janai",
         "register": "564242EEE",
         "department":"EEE",
-        "gender":"Female"
+        "gender":"Female",
+        "phoneno":1234567890
+
 
     },
     {
         "name": "Pushpa",
         "register": "53223ME",
         "department":"Mech",
-        "gender":"female"
+        "gender":"female",
+        "phoneno":1234567890
+
 
     }
 ]

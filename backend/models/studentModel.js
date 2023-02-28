@@ -55,6 +55,10 @@ const studentSchema = new mongoose.Schema({
                 ],
                 message: "Select the correct Year"
             } 
+        },
+        phoneno:{
+            type: Number,
+            require:[true, "Enter the Phone number"]
         }
 
 

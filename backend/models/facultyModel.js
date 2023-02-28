@@ -41,6 +41,10 @@ const facultySchema = new mongoose.Schema({
                 ],
                 message: "Select the correct Gender"
             } 
+        },
+        phoneno:{
+            type: Number,
+            require:[true, "Enter the Phone number"]
         }
         
 })
