@@ -8,12 +8,6 @@ const bookSchema = new mongoose.Schema({
             trim: true,
             maxLength:100
         },
-        invoice :{
-            type : Number,
-            required: [true, "Enter the Invoice Number" ],
-            trim: true,
-            maxLength:100  
-        },
         author :{
             type : String,
             required: [true, "Enter the Author Number" ],
@@ -52,6 +46,9 @@ const bookSchema = new mongoose.Schema({
             type : Number,
             required: [true, "Enter the Book ID" ],
             trim: true
+        },
+        stocks :{
+            type : Number
         }
 
 

@@ -1,10 +1,10 @@
 const Book = require('../models/bookModel')
-const Faculty = require('../models/facultyModel')
-const Student = require('../models/studentModel')
+// const Faculty = require('../models/facultyModel')
+// const Student = require('../models/studentModel')
 const Borrow = require('../models/borrowModel')
 const BorrowMaintain = require('../models/borrowMaintainModel')
 const Return = require('../models/returnModel')
-const Report = require('../models/reportModule')
+// const Report = require('../models/reportModule')
 const ErrorHandler = require("../utils/errorHandler")
 const catchError = require("../middlewares/catchAsyncError") 
 const { db } = require('../models/bookModel')
@@ -77,6 +77,13 @@ exports.borrowBook = catchError(async (req,res,next)=>{
   if(!lbookid){
     return next(new ErrorHandler("Invalid bookid"))
   }
+  if(lbookid){
+    const filter = { bookid:bookid };
+    const update = { $inc: { stocks: -1 } };
+    Book.updateOne(filter, update, (err, result) => {
+    if (err) throw err;
+  });
+  }
   const borrow = await Borrow.create(req.body)
   const borrow_maintain = await BorrowMaintain.create(req.body)
   res.status(201).json({
@@ -104,6 +111,13 @@ exports.returnBook = catchError(async (req,res,next)=>{
   if(rbookid){
     const deletedBooks = await BorrowMaintain.deleteOne({rbookid})
   }
+  if(rbookid){
+      const filter = { bookid:bookid };
+      const update = { $inc: { stocks: 1 } };
+      Book.updateOne(filter, update, (err, result) => {
+      if (err) throw err;
+    });
+    }
 
   res.status(201).json({
     success:true,
