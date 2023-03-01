@@ -53,5 +53,14 @@
         "year":"1 year",
         "phoneno":1234567890
 
+    },
+    {
+        "name": "Tharshan",
+        "register": "19IT010",
+        "gender":"Male",
+        "department":"Information Technology",
+        "year":"1 year",
+        "phoneno":1234567890
+
     }
 ]

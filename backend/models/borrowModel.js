@@ -23,7 +23,7 @@ const borrowSchema = new mongoose.Schema({
         enum:{
             values: [
                 'Student',
-                'Faculty',
+                'Faculty'
             ],
             message: "Select the correct Role"
         } 

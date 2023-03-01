@@ -1,0 +1,18 @@
+.button {
+    background-color: #ffedcb;
+    color: #000;
+    border: none;
+    font-size: 1.875rem;
+    font-weight: 500;
+    padding: 0.5rem 2rem;
+    margin-top: 5rem;
+    margin-bottom: 6.4375rem;
+    cursor: pointer;
+    background: linear-gradient(
+        0deg,
+        rgba(221, 204, 170, 0.5),
+        rgba(221, 204, 170, 0.5)
+      ),
+      rgba(255, 237, 203, 0.5);
+    border-radius: 0.9375rem;
+}

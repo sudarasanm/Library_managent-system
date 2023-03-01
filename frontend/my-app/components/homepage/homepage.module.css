@@ -1,0 +1,44 @@
+.navbarcontainer{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 6rem 0 4rem;
+    /* background-color: #1A1A1D; */
+    z-index: 0;
+}
+.buttoncontainer{
+  border: 1px solid black;
+  display: flex;
+  background-color: #1A1A1D;
+  padding: 0.5rem;
+  color: white;
+  font-weight: bold;
+}
+/* .input{
+    /* border: 1px solid gray; */
+    /* background-color: aliceblue; */
+    
+/* } */ 
+.input {
+    background-color: white;
+}
+.searchicon{
+    background-color: blueviolet;
+    color: white;
+    padding: 1rem;
+}
+.input input{
+    border: none;
+    padding: 9px 0 0 7rem;
+}
+.btn{
+    border: none;
+    color: white;
+    background-color: #1A1A1D;
+    padding: 0.7rem;
+    /* border-radius: 10px; */
+    font-weight: bold;
+}
+.btn:hover,.buttoncontainer:hover{
+    background-color: rgb(127, 167, 240);
+    color: black;
+}

@@ -32,8 +32,8 @@ const studentSchema = new mongoose.Schema({
             trim: true,
             enum:{
                 values: [
-                    'Information Technology',
-                    'Computer Science',
+                    'IT',
+                    'CSE',
                     'ECE',
                     'EEE',
                     'Mech',
