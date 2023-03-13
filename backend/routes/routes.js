@@ -1,6 +1,6 @@
 const express = require("express");
 const { getFacultys, newFaculty, updateFaculty, deleteFaculty } = require("../controllers/facultyController");
-const { getBooks, newBook, updateBook, deleteBook, borrowBook, returnBook,  getreport, getMaintainborrowbook } = require("../controllers/bookController");
+const { getBooks, newBook, updateBook, deleteBook, borrowBook, returnBook, getreport, getMaintainborrowbook } = require("../controllers/bookController");
 const { getStudents, newStudent, updateStudent, deleteStudent } = require("../controllers/studentController");
 const { registerUser, loginUser } = require("../controllers/authController")
 const router = express.Router();

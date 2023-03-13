@@ -11,7 +11,7 @@ const auth = require("./routes/routes")
 
 app.use(cors())
 app.use(express.json());
-app.use("/",books,students,facultys,auth)
+app.use("/", books, students, facultys, auth)
 
 
 
