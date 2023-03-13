@@ -1,0 +1,42 @@
+.formcontainer {
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    background-color: #e65a5a;
+    padding: 3rem;
+    border-radius: 15px;
+
+}
+
+.DynamicFormfield {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.DynamicFormfield label {
+    padding-bottom: 1.5rem;
+}
+
+.DynamicFormfield input {
+    border: none;
+    border-bottom: 1px solid #000;
+    background-color: #e65a5a;
+}
+
+.DynamicFormfield input:focus {
+    outline: none;
+}
+
+.dropdown {
+    border: none;
+    padding: 1rem;
+}
+
+.dropdown:focus {
+    outline: none;
+}
+
+.label {
+    padding: 1rem;
+}

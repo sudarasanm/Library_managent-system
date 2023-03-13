@@ -1,0 +1,46 @@
+.btn {
+    border: none;
+    background-color: #FFEDCB;
+    padding: 1rem 2rem;
+    color: #000;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.maindiv {
+    position: relative;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.datatable {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+}
+
+.datatable button {
+    border: none;
+    background-color: #3c444d;
+    padding: 0.5rem;
+    color: #fff;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.input {
+    position: absolute;
+    right: 81px;
+    /* bottom: 1px; */
+    padding: 0.35rem;
+    top: 71px;
+    border: 1px solid gray;
+}

@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3c444d;
+  padding: 1rem;
+  width: 100%;
+}
+
+.heading {
+  font-size: 1.5rem;
+  color: beige;
+}
+
+.library {
+  font-size: 1.5rem;
+  color: beige;
+}
+
+.image {
+  width: 2rem;
+  height: 2rem;
+}

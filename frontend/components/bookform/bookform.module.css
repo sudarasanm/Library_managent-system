@@ -1,0 +1,38 @@
+.formcontainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.formcontainer input {
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: gray;
+    padding: 5px 0;
+}
+
+.formcontainer label {
+    margin-top: 0.5rem;
+}
+
+.formcontainer select {
+    border: none;
+    border-bottom: 1px solid black;
+    padding-top: 1rem;
+    background-color: gray;
+}
+
+.formcontent {
+    width: 27rem;
+    background-color: gray;
+    border-radius: 9px;
+    margin: 0 auto;
+    padding: 0.5rem 4rem;
+}
+
+.formcontainer input:focus {
+    outline: none;
+}
+
+.formcontainer select:focus {
+    outline: none;
+}
