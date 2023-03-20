@@ -3,8 +3,8 @@ import collegelogo from "../../assests/images/collegelogo.svg"
 import styles from "./header.module.css"
 import Image from 'next/image'
 
-function Header() {
-  const heading = "Book List"
+function Header({heading}) {
+  // const heading = "Book List"
   return (  
     <div className={styles.header} >
       <div>

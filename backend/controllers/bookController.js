@@ -11,7 +11,7 @@ const catchError = require("../middlewares/catchAsyncError")
 
 //Get Book - 
 exports.getBooks = async (req, res, next) => {
-  stocks: {
+   {
     const books = await Book.find({}, { name: 1, _id: 0, isbn: 1, author: 1, department: 1, cost: 1, stocks: 1, bookid: 1 });
     res.status(200).json({
       success: true,
