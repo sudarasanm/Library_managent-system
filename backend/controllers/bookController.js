@@ -3,12 +3,16 @@ const Borrow = require('../models/borrowModel')
 const BorrowMaintain = require('../models/borrowMaintainModel')
 const Return = require('../models/returnModel')
 const ErrorHandler = require("../utils/errorHandler")
+const {excelToJson,Jsontoexport} = require("../../backend/utils/excel-parser")
 const catchError = require("../middlewares/catchAsyncError")
+const multer = require('multer');
+const XLSX = require('xlsx');
+const catchAsyncError = require('../middlewares/catchAsyncError')
 
 
 
 
-
+// $or:[{name : {$regex : req.query.searchKey}},{author : {$regex : req.body.searchKey}},{department : {$regex : req.body.searchKey}},{bookid : {$regex : req.body.searchKey}}]
 //Get Book - 
 exports.getBooks = async (req, res, next) => {
    {
@@ -68,9 +72,9 @@ exports.deleteBook = async (req, res, next) => {
 exports.borrowBook = catchError(async (req, res, next) => {
   const { register, name, bookid, role } = (req.body)
 
-  if (!register || !name || !bookid || !role) {
-    return next(new ErrorHandler('Enter the requide fields'))
-  }
+    if (!register || !name || !bookid || !role) {
+      return next(new ErrorHandler('Enter the Required fields'))
+    }
 
   const lbookid = await Book.findOne({ bookid: bookid })
 
@@ -89,22 +93,37 @@ exports.borrowBook = catchError(async (req, res, next) => {
   res.status(201).json({
     success: true,
     borrow,
-    borrow_maintain
+    borrow_maintain,
+    count: borrow_maintain.length,
+
+
   })
 })
+// const upload = multer().single('data');
+ exports.uploadDetailsbook = catchError(async (req, res)=>{
 
+    let file = req.files.data
+
+    let loadfile = await excelToJson(file)
+
+    let result = await Book.create(loadfile)
+
+    res.status(200).json(result);
+
+}
+)
 
 exports.returnBook = catchError(async (req, res, next) => {
   const { register, name, bookid, role } = (req.body)
 
   if (!register || !name || !bookid || !role) {
-    return next(new ErrorHandler('Enter the requide fields'))
+    return next(new ErrorHandler('Enter the requide fields',401))
   }
 
-  const rbookid = await Borrow.findOne({ bookid: bookid })
+  const rbookid = await BorrowMaintain.findOne({ bookid: bookid })
 
   if (!rbookid) {
-    return next(new ErrorHandler("The Book is not Borrow or Invalid bookid"))
+    return next(new ErrorHandler('The Book is not Borrow or Invalid bookid',401))
   }
   const returnBook = await Return.create(req.body)
 
@@ -133,11 +152,13 @@ exports.getreport = catchError(async (req, res, next) => {
 
 
   const final = [...breport, ...rreport]
-  console.log("===", final)
+  
 
   res.status(200).json({
     success: true,
-    final
+    final,
+    count: final.length
+
   })
 })
 
@@ -147,6 +168,9 @@ exports.getMaintainborrowbook = catchError(async (req, res, next) => {
 
   res.status(200).json({
     success: true,
-    maintain
+    maintain,
+    count: maintain.length,
+
+
   })
 })

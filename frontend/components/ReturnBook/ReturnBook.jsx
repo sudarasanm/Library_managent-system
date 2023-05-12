@@ -2,8 +2,9 @@ import React, { useState } from "react"; ''
 import styles from "../bookform/bookform.module.css"
 import axios from "axios";
 import SubmitButton from "components/button/Button";
+// import Popup from "components/popup/Popup";
 
-export default function ReturnBook() {
+export default function ReturnBook({setreturnBook,setShowPopUp,setresponse}) {
   const [bookNameInput, setbookNameInput] = useState("");
   const [registerInput, setRegisterInput] = useState("");
   const [bookId, setBookId] = useState("");
@@ -33,22 +34,29 @@ export default function ReturnBook() {
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    var raw = JSON.stringify({
+    var raw = {
       ...formValues
-    });
-
-    var requestOptions = {
-      method: 'POST',
-      body: raw,
-      redirect: 'follow',
-      headers: myHeaders
     };
 
+    // var requestOptions = {
+    //   method: 'POST',
+    //   body: raw,
+    //   redirect: 'follow',
+    //   headers: myHeaders
+    // };
 
 
-    fetch("http://localhost:8000/returns", requestOptions)
-      .then(res => (console.log(res?.data)))
-      .catch(err => console.log(err))
+
+    axios.post("http://localhost:3434/returns", raw)
+      .then(res => {(console.log(res?.data)),setreturnBook(false);if(res?.data?.success)
+        {
+        setShowPopUp(true),
+        setresponse("Book Returned successfully")
+       }})
+      .catch(err => {console.log(err);
+        if(!err?.response?.data?.success){
+      setShowPopUp(true),
+      setresponse("The Book is not borrowed or something went wrong")}})
 
 
 

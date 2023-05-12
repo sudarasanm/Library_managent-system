@@ -3,9 +3,12 @@ import Layout from 'components/layout/Layout'
 import ReturnBook from 'components/ReturnBook/ReturnBook'
 import React, { useState } from 'react'
 import styles from "../../styles/addbutton.module.css"
+import Popup from 'components/popup/Popup'
 
 export default function ReturnPage() {
   const [returnBook, setreturnBook] = useState(false)
+  const [response,setresponse]= useState("successfully book returned")
+  const [showPopUp,setShowPopUp]=useState(false)
   function handleclick() {
     setreturnBook(!returnBook)
   }
@@ -13,8 +16,11 @@ export default function ReturnPage() {
     <Layout>
 
       <div>
-        <ReturnBook />
+        <ReturnBook setShowPopUp={setShowPopUp}setreturnBook={setreturnBook}setresponse={setresponse}/>
       </div>
+      { showPopUp && <Popup onClick={()=>setShowPopUp(!showPopUp)}>
+        {response}
+      </Popup>}
     </Layout>
   );
 }

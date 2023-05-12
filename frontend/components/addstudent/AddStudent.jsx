@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import styles from "../addfaculty/addfaculty.module.css"
 
 
-function AddStudent() {
+function AddStudent({setstudent,setShowPopUp}) {
 
   const [studentName, setstudentName] = useState('')
   const [registerNo, setregisterNo] = useState('')
@@ -49,13 +49,9 @@ function AddStudent() {
   }
 
   const studentFormSubmiHandler = (e) => {
+    // debugger
     e.preventDefault()
     console.log(formvalues)
-   
-
-
-
-
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -70,9 +66,9 @@ function AddStudent() {
       redirect: 'follow'
     };
 
-    fetch("http://localhost:8000/book/new", requestOptions)
-      .then(response => response.text())
-      .then(result => console.log(result))
+    fetch("http://localhost:3434/student/new", requestOptions)
+      // .then(response => response.text())
+      .then(result => {console.log(result,"result"),setstudent(false),setShowPopUp(true)})
       .catch(error => console.log('error', error));
 
 
@@ -91,7 +87,7 @@ function AddStudent() {
           onChange={studentnameinputhandler}
           value={studentName}
         />
-        <label htmlFor="register_no">Employee Id</label>
+        <label htmlFor="register_no">Register No</label>
         <input
           type="text"
           id="register_no"
@@ -101,7 +97,7 @@ function AddStudent() {
           onChange={registerNoHandler}
           value={registerNo}
         />
-        <label htmlFor="">Select year</label>
+        <label htmlFor="">Select Year</label>
         <select onChange={yearhandler} value={year}>
           <option value="1 year">1 Year</option>
           <option value="2 year">2 Year</option>

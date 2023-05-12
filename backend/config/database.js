@@ -5,7 +5,8 @@ const mongoose = require("mongoose")
 const connectDatabse = () => {
     mongoose.connect(process.env.DBURI, {
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        
     }).then(con => {
         console.log("db connected");
     }).catch((err) =>

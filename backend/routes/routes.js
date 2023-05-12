@@ -1,7 +1,7 @@
 const express = require("express");
-const { getFacultys, newFaculty, updateFaculty, deleteFaculty } = require("../controllers/facultyController");
-const { getBooks, newBook, updateBook, deleteBook, borrowBook, returnBook, getreport, getMaintainborrowbook } = require("../controllers/bookController");
-const { getStudents, newStudent, updateStudent, deleteStudent } = require("../controllers/studentController");
+const { getFacultys, newFaculty, updateFaculty, deleteFaculty ,uploadDetailsfaculty } = require("../controllers/facultyController");
+const { getBooks, newBook, updateBook, deleteBook, borrowBook, returnBook, getreport, getMaintainborrowbook, uploadDetailsbook } = require("../controllers/bookController");
+const { getStudents, newStudent, updateStudent, deleteStudent, uploadDetailsstudent } = require("../controllers/studentController");
 const { registerUser, loginUser } = require("../controllers/authController")
 const router = express.Router();
 
@@ -15,8 +15,11 @@ router.route("/students").get(getStudents);
 router.route("/books").get(getBooks);
 
 router.route("/faculty/new").post(newFaculty);
+router.route("/uploadfacultydata/new").post(uploadDetailsfaculty)
 router.route("/book/new").post(newBook);
+router.route("/uploadbookdata/new").post(uploadDetailsbook)
 router.route("/student/new").post(newStudent);
+router.route("/uploadstudentdata/new").post(uploadDetailsstudent)
 router.route("/register").post(registerUser);
 router.route("/login").post(loginUser);
 

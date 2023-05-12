@@ -4,8 +4,10 @@ import React, { useEffect, useState } from "react";
 import Pagination from "components/pagination/Pagenation";
 import styles from "../../styles/addbutton.module.css";
 import StudentForm from "components/addstudent/AddStudent"
+import Upload from "components/Upload/Upload";
+import Popup from "components/popup/Popup";
 
-function StudentPage({ data }) {
+function StudentPage({ data,counts }) {
   const [student, setstudent] = useState(false)
   function handleclick() {
     setstudent(!student)
@@ -14,6 +16,7 @@ function StudentPage({ data }) {
 
   const [query, setquery] = useState("");
   const [currentPage, setcurrentPage] = useState(1);
+  const [showPopUp,setShowPopUp]=useState(false)
   const [postPerPage] = useState(8);
   const LastPostIndex = currentPage * postPerPage;
   const FirstPostIndex = LastPostIndex - postPerPage;
@@ -26,12 +29,24 @@ function StudentPage({ data }) {
       )
     );
   }
+  const getBookData= ()=>
+  {
+    if(!query)
+    {
+      return   search(CurrentPosts)
+    }
+    else
+    {
+      return  search(data)
+    }
+  }
   return (
     <Layout>
       <div>
         <div>
           <button className={styles.btn} onClick={handleclick}>Add Student</button>
-          {student && < StudentForm/>}
+          {student && < StudentForm setShowPopUp={setShowPopUp} setstudent={setstudent}/>}
+          <p>Number of Students: {counts}</p>
         </div>
         <input
           className={styles.input}
@@ -42,11 +57,23 @@ function StudentPage({ data }) {
         />
 
         {!student && <div className={styles.datatable}>
-          <DataTable data={search(CurrentPosts)} />
+          <DataTable data={search(getBookData())} />
           <Pagination totalposts={data.length} postperpage={postPerPage} setcurrentPage={setcurrentPage} />
+        
         </div>
         }
       </div>
+      <>  
+     <button className={styles.btn} style={{position: 'absolute',
+    bottom: '35px', 
+    right: '21px',
+    cursor: 'pointer' }}>
+      <Upload url = {'http://localhost:3434/uploadstudentdata/new'} />
+      </button> 
+      </>
+      { showPopUp && <Popup onClick={()=>setShowPopUp(!showPopUp)}>
+        Student added successfully
+      </Popup>}
     </Layout>
   );
 }
@@ -54,12 +81,14 @@ function StudentPage({ data }) {
 export default StudentPage;
 
 export async function getServerSideProps(context) {
-  const response = await fetch("http://localhost:8000/students");
+  const response = await fetch("http://localhost:3434/students");
   const data = await response.json()
   const datas = data.students
+  const count = data.count
   return {
     props: {
       data: datas,
+      counts:count
     },
   };
 }

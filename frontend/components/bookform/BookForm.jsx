@@ -3,7 +3,7 @@ import styles from "./bookform.module.css"
 import SubmitButton from "components/button/Button";
 import axios from "axios";
 import { headers } from "next.config";
-export default function BookForm() {
+export default function BookForm({setbookForm,setShowPopUp}) {
   const [bookNameInput, setbookNameInput] = useState("");
   const [invoiceInput, setinvoiceInput] = useState("");
   const [authorInput, setauthorInput] = useState("");
@@ -48,7 +48,7 @@ export default function BookForm() {
   }
   const booksubmitHandler = (e) => {
     e.preventDefault()
-    console.log(formValues)
+    // console.log(formValues,"qwertyuio")
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -62,11 +62,11 @@ export default function BookForm() {
       redirect: 'follow',
       headers: myHeaders
     };
-
-
-
-    fetch("http://localhost:8000/book/new", requestOptions)
-      .then(res => (console.log(res?.data)))
+    fetch("http://localhost:3434/book/new", requestOptions)
+      .then(res => {(console.log(res?.data))
+        setShowPopUp(true)
+        setbookForm(false)
+      })
       .catch(err => console.log(err))
 
   }
@@ -90,17 +90,19 @@ export default function BookForm() {
           id="author"
           onChange={authorHandler}
           value={authorInput}
+          required
+
         />
         <label htmlFor="cost">Enter the Cost</label>
-        <input type="number" id="cost" onChange={costHandler} value={costInput} />
+        <input type="number" id="cost" onChange={costHandler} value={costInput} required/>
         <label htmlFor="isbn">Enter the ISBN</label>
-        <input type="text" id="isbn" onChange={isbnHandler} value={isBn} />
+        <input type="text" id="isbn" onChange={isbnHandler} value={isBn} required/>
         <label htmlFor="BookID">Enter the Book ID</label>
-        <input type="text" id="BookID" onChange={bookIdHandler} value={isBn} />
+        <input type="text" id="BookID" onChange={bookIdHandler} value={bookidInput} required/>
         <label htmlFor="Stocks">Enter the Stocks</label>
-        <input type="text" id="Stocks" onChange={stocksHandler} value={isBn} />
+        <input type="number" id="Stocks" onChange={stocksHandler} value={stocksInput} required/>
         <label htmlFor="department">Select Department</label>
-        <select onChange={departmenthandler} value={departmentInput} >
+        <select onChange={departmenthandler} value={departmentInput} required>
           <option value="Information Technology">Informaation Technology</option>
           <option value="Computer Science">Computer Science</option>
           <option value="Science">Science</option>

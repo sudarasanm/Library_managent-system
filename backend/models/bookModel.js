@@ -4,19 +4,19 @@ const mongoose = require("mongoose");
 const bookSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: [true, "Enter the Book Name"],
+        // required: [true, "Enter the Book Name"],
         trim: true,
         maxLength: 100
     },
     author: {
         type: String,
-        required: [true, "Enter the Author Number"],
+        // required: [true, "Enter the Author Number"],
         trim: true,
 
     },
     isbn: {
         type: Number,
-        required: [true, "Enter the ISBN Number"],
+        // required: [true, "Enter the ISBN Number"],
         trim: true,
 
     },
@@ -28,7 +28,7 @@ const bookSchema = new mongoose.Schema({
     },
     department: {
         type: String,
-        required: [true, "Enter the  Department"],
+        // required: [true, "Enter the  Department"],
         trim: true,
         enum: {
             values: [
@@ -45,11 +45,12 @@ const bookSchema = new mongoose.Schema({
     },
     bookid: {
         type: Number,
-        required: [true, "Enter the Book ID"],
+        // required: [true, "Enter the Book ID"],
         trim: true
     },
     stocks: {
-        type: Number
+        type: Number,
+        // required: [true, "Enter the stocks"]
     }
 
 

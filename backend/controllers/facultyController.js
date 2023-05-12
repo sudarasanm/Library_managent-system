@@ -1,11 +1,14 @@
 const Faculty = require('../models/facultyModel')
 const ErrorHandler = require("../utils/errorHandler")
 const catchError = require("../middlewares/catchAsyncError")
+const {excelToJson,Jsontoexport} = require("../../backend/utils/excel-parser")
+
 //Get faculty -
 exports.getFacultys = async (req, res, next) => {
   const facultys = await Faculty.find({}, { name: 1, _id: 0, register: 1, gender: 1, department: 1, phoneno: 1 });
   res.status(200).json({
     success: true,
+    count: facultys.length,
     facultys
   })
 }
@@ -48,3 +51,15 @@ exports.deleteFaculty = async (req, res, next) => {
     message: "Faculty Deleted"
   })
 }
+exports.uploadDetailsfaculty = catchError(async (req, res)=>{
+
+    let file = req.files.data
+
+    let loadfile = await excelToJson(file)
+
+    let result = await Faculty.create(loadfile)
+  
+    res.status(200).json(result);
+
+  }
+)

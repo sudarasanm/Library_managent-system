@@ -3,7 +3,7 @@ import styles from "../bookform/bookform.module.css"
 import axios from "axios";
 import SubmitButton from "components/button/Button";
 
-export default function BorrowBook() {
+export default function BorrowBook({setborrow,setShowPopUp,setresponse}) {
   const [bookNameInput, setbookNameInput] = useState("");
   const [registerInput, setRegisterInput] = useState("");
   const [bookId, setBookId] = useState("");
@@ -32,22 +32,35 @@ export default function BorrowBook() {
     console.log(formValues)
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    var raw = JSON.stringify({
+    var raw = {
       ...formValues
-    });
-
-    var requestOptions = {
-      method: 'POST',
-      body: raw,
-      redirect: 'follow',
-      headers: myHeaders
     };
 
+    // var requestOptions = {
+    //   method: 'POST',
+    //   body: raw,
+    //   redirect: 'follow',
+    //   headers: myHeaders
+    // };
 
 
-    fetch("http://localhost:8000/borrows", requestOptions)
-      .then(res => (console.log(res?.data)))
-      .catch(err => console.log(err))
+    
+    axios.post("http://localhost:3434/borrows", raw)
+    
+      .then(res => {(console.log(res?.data,"data"),setborrow(false));if(res?.data?.success)
+        {
+        setShowPopUp(true),
+        setresponse("Book borrowed successfully")
+       }
+      
+      })
+      .catch(err => {
+      
+        console.log(err,"error"); console.log("susan",err?.response); 
+          if(!err?.response?.data?.success){
+          setShowPopUp(true),
+        setresponse("something went wrong please check")
+       }})
 
 
 

@@ -3,8 +3,9 @@ import SubmitButton from "components/button/Button";
 import React from "react";
 import { useState } from "react";
 import styles from "./addfaculty.module.css"
+import Popup from "components/popup/Popup";
 
-function FacultyForm() {
+function FacultyForm({setfaculty,setShowPopUp}) {
   const [Name, setName] = useState('')
   const [employeeId, setemployeeId] = useState('')
   const [department, setDepartment] = useState('')
@@ -29,14 +30,16 @@ function FacultyForm() {
 
 
 
-    fetch("http://localhost:8000/faculty/new", requestOptions)
+    fetch("http://localhost:3434/faculty/new", requestOptions)
       .then(res => (console.log(res?.data)))
       .then(res => {
+        setShowPopUp(true)
         setName("")
         setemployeeId("")
         setDepartment("")
         setgender("")
         setphonenumber("")
+        setfaculty(false)
       })
       .catch(err => console.log(err))
 

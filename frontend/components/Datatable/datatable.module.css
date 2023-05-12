@@ -2,6 +2,7 @@
     border-collapse: collapse;
     /* width: 100%; */
     margin: 0 auto;
+    color: #000;
 }
 
 .container th {
@@ -11,6 +12,7 @@
 
 .container table {
     border: 1px solid #000;
+    border-collapse: collapse;
 }
 
 .container td {
