@@ -4,6 +4,7 @@ const User = require("../models/userModel")
 const ErrorHandler = require('../utils/errorHandler')
 const { isValidPassword } = require("../models/userModel")
 
+
 exports.registerUser = catchAsyncError(async (req, res, next) => {
     const { username, password } = req.body
     const user = await User.create({

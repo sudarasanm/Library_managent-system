@@ -1,4 +1,5 @@
 /node_modules
 /trash
-/config/config.env
+./config/config.env
+../frontend/node_modules
 

@@ -2,6 +2,7 @@ const express = require("express");
 const expressFile = require("express-fileupload")
 const cors = require('cors')
 const { createClient } = require("redis")
+const { cre } = require("../frontend/node_modules")
 
 const app = express()
 
